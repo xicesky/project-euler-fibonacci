@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.3.
+--
+-- see: https://github.com/sol/hpack
+
+name:           project-euler-fibonacci
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/xicesky/project-euler-fibonacci#readme>
+homepage:       https://github.com/xicesky/project-euler-fibonacci#readme
+bug-reports:    https://github.com/xicesky/project-euler-fibonacci/issues
+author:         Markus Dangl
+maintainer:     sky@q1cc.net
+copyright:      (c) 2021 Markus Dangl
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/xicesky/project-euler-fibonacci
+
+library
+  exposed-modules:
+      Fibonacci.Fibonacci
+  other-modules:
+      Paths_project_euler_fibonacci
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , data-memocombinators >=0.5
+  default-language: Haskell2010
+
+executable project-euler-fibonacci-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_project_euler_fibonacci
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , data-memocombinators >=0.5
+    , project-euler-fibonacci
+  default-language: Haskell2010
+
+test-suite project-euler-fibonacci-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_project_euler_fibonacci
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , data-memocombinators >=0.5
+    , hspec
+    , project-euler-fibonacci
+    , quickcheck-instances
+  default-language: Haskell2010
