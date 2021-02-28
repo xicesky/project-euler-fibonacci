@@ -7,6 +7,9 @@
 # Ignore our dummy dir (used for examples and ad-hoc code)
 /dummy
 
+# Generated files
+/benchmark-report.html
+
 # The following are from https://github.com/github/gitignore/blob/master/Haskell.gitignore
 dist
 dist-*
